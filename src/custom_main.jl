@@ -4,6 +4,7 @@ include("convert.jl")
 import Clustering
 import Statistics
 using Distances
+import StatsBase
 
 function custom_main(N::Int = -1, method::String= "none")
     ############################################################################################
@@ -44,7 +45,7 @@ function custom_main(N::Int = -1, method::String= "none")
             Y_train_prime = Vector{Int}([])
             for g in 1:num_of_groups 
                 mask = findall(y -> y == g, groups.assignments)
-                class_of_g = round(Statistics.mean(Y_train[mask]))
+                class_of_g = StatsBase.mode(Y_train[mask])
                 push!(Y_train_prime, class_of_g)
             end
         end
@@ -64,7 +65,7 @@ function custom_main(N::Int = -1, method::String= "none")
             Y_train_prime = Vector{Int}([])
             for g in 1:num_of_groups 
                 mask = findall(y -> y == g, groups.assignments)
-                class_of_g = round(Statistics.mean(Y_train[mask]))
+                class_of_g = StatsBase.mode(Y_train[mask])
                 push!(Y_train_prime, class_of_g)
             end
         end
