@@ -1,5 +1,13 @@
 # K-means algorithm
+using Printf
+using Distances
+using NearestNeighbors
+using StatsBase
 
+using Printf
+using LinearAlgebra
+using SparseArrays
+using Statistics
 #### Interface
 
 # C is the type of centers, an (abstract) matrix of size (d x k)

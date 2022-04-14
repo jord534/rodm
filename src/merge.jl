@@ -152,7 +152,7 @@ function simpleMerge(x, y, gamma)
     end
     
     # Retourner tous les clusters non vides
-    return filter(x -> length(x.dataIds) > 0, clusters)
+    return filter(x -> length(x.dataIds) > 0, clusters) # ici x est une variable muette, remplacee par clusters
 end 
 
 """

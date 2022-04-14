@@ -307,4 +307,3 @@ function build_tree(clusters::Vector{Cluster}, D::Int64;multivariate::Bool=false
 
     return T, objective_value(m), resolution_time, gap
 end
-
